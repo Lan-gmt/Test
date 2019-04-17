@@ -28,41 +28,26 @@ import static org.junit.Assert.*
 import java.util.regex.Pattern
 import static org.apache.commons.lang3.StringUtils.join
 
-WebUI.openBrowser('')
+WebUI.openBrowser('https://www.katalon.com/')
 def driver = DriverFactory.getWebDriver()
 String baseUrl = "https://www.katalon.com/"
 selenium = new WebDriverBackedSelenium(driver, baseUrl)
 selenium.open("https://hoclieu.sachmem.vn/folder/0")
 selenium.click("id=link-login")
 selenium.click("link=Google")
-selenium.type("id=identifierId", "lanxx")
-selenium.click("class=RveJvd snByac")
-WebUI.delay(2);
-selenium.type("name=password", "lanxxxx")
-selenium.click("class=RveJvd snByac")
-WebUI.delay(8);
-selenium.click("link=Lớp 5")
-WebUI.delay(1);
-selenium.click("link=Bài tập cuối tuần Tiếng Việt 5 Tập 2")
-WebUI.delay(2);
-selenium.click("xpath=(.//*[normalize-space(text()) and normalize-space(.)='Làm cả bài'])[1]/following::span[1]")
-WebUI.delay(2);
-selenium.click("xpath=(.//*[normalize-space(text()) and normalize-space(.)='Chọn lớp học'])[1]/following::div[1]")
-WebUI.delay(2);
-
-selenium.click("class=ng-option")
- WebUI.delay(2); 
-  
-  
- selenium.click("name=test-class")
- WebUI.delay(2);
- 
- selenium.click("name=test-class")
- WebUI.delay(1); 
- //selenium.click("xpath=(.//*[normalize-space(text()) and normalize-space(.)='Số lần làm lại'])[1]/following::input[1]")
-
-
- selenium.click("xpath=(.//*[normalize-space(text()) and normalize-space(.)='Ngày giờ kết thúc'])[1]/following::input[4]")
- WebUI.delay(2)
- WebUI.verifyTextPresent("Giao bài tập thành công", false)
- 
+selenium.type("id=identifierId", "lantt.200698")
+selenium.click("xpath=(.//*[normalize-space(text()) and normalize-space(.)='Để tiếp tục, Google sẽ chia sẻ tên, địa chỉ email và ảnh hồ sơ của bạn với sachmem.vn.'])[1]/following::span[1]")
+selenium.type("name=password", "Gmtsax98@")
+selenium.click("xpath=(.//*[normalize-space(text()) and normalize-space(.)='Để tiếp tục, Google sẽ chia sẻ tên, địa chỉ email và ảnh hồ sơ của bạn với sachmem.vn.'])[1]/following::span[1]")
+selenium.click("link=Lớp học của tôi")
+selenium.click("link=Kiến thức lớp 10")
+selenium.click("id=optionDropdown")
+selenium.click("link=Chỉnh sửa")
+selenium.click("xpath=(.//*[normalize-space(text()) and normalize-space(.)='Thời gian làm bài (phút)'])[1]/following::input[1]")
+selenium.type("xpath=(.//*[normalize-space(text()) and normalize-space(.)='Thời gian làm bài (phút)'])[1]/following::input[1]", "-1")
+selenium.click("xpath=(.//*[normalize-space(text()) and normalize-space(.)='Ngày giờ kết thúc'])[1]/following::input[4]")
+selenium.click("xpath=(.//*[normalize-space(text()) and normalize-space(.)='Thời gian làm bài (phút)'])[1]/following::input[1]")
+selenium.type("xpath=(.//*[normalize-space(text()) and normalize-space(.)='Thời gian làm bài (phút)'])[1]/following::input[1]", "30")
+selenium.click("xpath=(.//*[normalize-space(text()) and normalize-space(.)='Ngày giờ kết thúc'])[1]/following::input[4]")
+WebUI.delay(2)
+WebUI.verifyTextPresent("Giao bài tập thành công", false)
